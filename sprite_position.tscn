@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://cm76ti2213l7x"]
+
+[ext_resource type="Texture2D" uid="uid://bdwnbav554aft" path="res://icon.svg" id="1_2ftvn"]
+[ext_resource type="Script" path="res://SpritePosition.cs" id="1_jmhk0"]
+
+[sub_resource type="Animation" id="Animation_pe28i"]
+resource_name = "new_animation"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpritePosition/Sprite2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(319, 320), Vector2(858, 318), Vector2(548, 553)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpritePosition/Sprite2D:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.9759, 1.85437), Vector2(1.0297, 0.269183)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SpritePosition/Sprite2D:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -5.51313, -11.5468]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nxxbv"]
+_data = {
+"new_animation": SubResource("Animation_pe28i")
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_svtt1"]
+
+[node name="SpritePosition" type="AnimationPlayer"]
+libraries = {
+"": SubResource("AnimationLibrary_nxxbv"),
+"testing": SubResource("AnimationLibrary_svtt1")
+}
+script = ExtResource("1_jmhk0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(605.381, 537.932)
+rotation = -11.549
+scale = Vector2(1.15804, 0.429618)
+texture = ExtResource("1_2ftvn")
